@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taiping Life - Business Dashboard</title>
+<style>
+body { font-family: 'Microsoft YaHei', Arial, sans-serif; background: #0d1117; color: #e6edf3; margin: 0; padding: 20px; }
+.header { background: linear-gradient(135deg, #1a3a5c 0%, #0d2137 100%); padding: 20px; border-radius: 12px; margin-bottom: 20px; }
+.header h1 { color: #58a6ff; margin: 0 0 5px 0; }
+.header p { color: #8b949e; margin: 0; }
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 20px; }
+.kpi { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; }
+.kpi-label { color: #8b949e; font-size: 12px; margin-bottom: 8px; }
+.kpi-value { font-size: 28px; font-weight: bold; color: #e6edf3; }
+.kpi-sub { color: #8b949e; font-size: 11px; margin-top: 5px; }
+.section { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
+.section h2 { color: #8b949e; font-size: 14px; margin: 0 0 15px 0; }
+table { width: 100%; border-collapse: collapse; font-size: 12px; }
+th { color: #8b949e; text-align: left; padding: 8px; border-bottom: 1px solid #30363d; }
+td { padding: 8px; border-bottom: 1px solid #21262d; }
+.footer { text-align: center; color: #484f58; font-size: 11px; padding: 20px; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>Taiping Life - Business Dashboard</h1>
+  <p>Heilongjiang Heihe Branch | Updated: 2026-04-16 15:22</p>
+</div>
+<div class="kpi-grid">
+  <div class="kpi">
+    <div class="kpi-label">PREMIUM (Wan)</div>
+    <div class="kpi-value">107.68</div>
+    <div class="kpi-sub">10 long-term policies</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-label">TOTAL POLICIES</div>
+    <div class="kpi-value">570</div>
+    <div class="kpi-sub">FYC: 110,291</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-label">ACTIVE STAFF</div>
+    <div class="kpi-value">91</div>
+    <div class="kpi-sub">Supervisors: 25</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-label">ACTIVITY RATE</div>
+    <div class="kpi-value">100%</div>
+    <div class="kpi-sub">All staff active</div>
+  </div>
+</div>
+<div class="section">
+  <h2>Staff by Level</h2>
+  <table>
+    <tr><th>Level</th><th>Count</th><th>Policies</th><th>FYC</th><th>Avg FYC</th><th>%</th></tr>
+    <tr><td>正式业务员</td><td>32</td><td>173</td><td>15,444</td><td>89</td><td>14.0%</td></tr><tr><td>降级试用业务代表</td><td>32</td><td>139</td><td>8,761</td><td>63</td><td>7.9%</td></tr><tr><td>业务经理一级</td><td>10</td><td>101</td><td>12,498</td><td>124</td><td>11.3%</td></tr><tr><td>业务经理二级</td><td>9</td><td>104</td><td>10,384</td><td>100</td><td>9.4%</td></tr><tr><td>高级经理一级</td><td>4</td><td>39</td><td>33,047</td><td>847</td><td>30.0%</td></tr><tr><td>业务主任</td><td>2</td><td>10</td><td>157</td><td>16</td><td>0.1%</td></tr><tr><td>试用业务员</td><td>2</td><td>4</td><td>30,000</td><td>7500</td><td>27.2%</td></tr>
+  </table>
+</div>
+<div class="section">
+  <h2>Top 10 Products</h2>
+  <table>
+    <tr><th>#</th><th>Product</th><th>Policies</th><th>Premium(W)</th><th>%</th></tr>
+    <tr><td>1st</td><td>国威一号</td><td>3</td><td>60.00</td><td>55.7%</td></tr><tr><td>2nd</td><td>超e保2021</td><td>334</td><td>31.59</td><td>29.3%</td></tr><tr><td>3rd</td><td>医安心</td><td>49</td><td>8.11</td><td>7.5%</td></tr><tr><td>4</td><td>医无忧2021</td><td>27</td><td>5.18</td><td>4.8%</td></tr><tr><td>5</td><td>爱无忧</td><td>41</td><td>0.73</td><td>0.7%</td></tr><tr><td>6</td><td>超e保长享版</td><td>6</td><td>0.71</td><td>0.7%</td></tr><tr><td>7</td><td>福禄嘉禧</td><td>1</td><td>0.47</td><td>0.4%</td></tr><tr><td>8</td><td>爱安心</td><td>17</td><td>0.33</td><td>0.3%</td></tr><tr><td>9</td><td>真爱健康2021</td><td>6</td><td>0.29</td><td>0.3%</td></tr><tr><td>10</td><td>药无忧2021医疗</td><td>22</td><td>0.18</td><td>0.2%</td></tr>
+  </table>
+</div>
+<div class="section">
+  <h2>Policy Status</h2>
+  <table>
+    <tr><th>Status</th><th>Count</th><th>%</th></tr>
+    <tr><td>首期待承保</td><td>341</td><td>59.8%</td></tr><tr><td>保单进入正常有效状态</td><td>223</td><td>39.1%</td></tr><tr><td>承保前撤件</td><td>2</td><td>0.4%</td></tr><tr><td>拒保</td><td>2</td><td>0.4%</td></tr><tr><td>正在复核</td><td>1</td><td>0.2%</td></tr><tr><td>等待自动核保</td><td>1</td><td>0.2%</td></tr>
+  </table>
+</div>
+<div class="footer">
+  Taiping Life Heilongjiang Heihe | Auto-updated daily at 09:00 | QClaw AI Generated
+</div>
+</body>
+</html>
