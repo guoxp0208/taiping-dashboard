@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黑河常青藤看板</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Microsoft YaHei', Arial, sans-serif;
+  background: #0d1117;
+  color: #e6edf3;
+  padding: 20px;
+  min-height: 100vh;
+}
+.header {
+  background: linear-gradient(135deg, #1a3a2c 0%, #0d2118 100%);
+  padding: 24px 28px;
+  border-radius: 14px;
+  margin-bottom: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #2ea04326;
+}
+.header h1 { color: #3fb950; font-size: 22px; letter-spacing: 1px; }
+.header p  { color: #8b949e; font-size: 13px; margin-top: 5px; }
+.update-time { color: #3fb950; font-size: 12px; text-align: right; line-height: 1.8; }
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+  margin-bottom: 22px;
+}
+.kpi {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+.kpi-label { color: #8b949e; font-size: 12px; margin-bottom: 8px; }
+.kpi-value { font-size: 36px; font-weight: bold; color: #3fb950; }
+.kpi-sub   { color: #8b949e; font-size: 11px; margin-top: 6px; }
+
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+@media(max-width: 800px) { .grid2 { grid-template-columns: 1fr; } }
+
+.section {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.section-title {
+  color: #8b949e;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #21262d;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-title span { color: #3fb950; font-size: 16px; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th {
+  color: #8b949e;
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid #30363d;
+  font-size: 11px;
+  font-weight: normal;
+  letter-spacing: 0.5px;
+}
+td { padding: 9px 10px; border-bottom: 1px solid #21262d; }
+tr:last-child td { border-bottom: none; }
+tr:hover td { background: #1c2128; }
+.dept-name { color: #e6edf3; font-weight: 500; }
+.num { text-align: right; color: #58a6ff; font-weight: bold; }
+.pct { text-align: right; color: #8b949e; font-size: 12px; }
+.bar-bg   { background: #21262d; border-radius: 4px; height: 8px; width: 200px; }
+.bar-fill { background: linear-gradient(90deg, #2ea043, #3fb950); border-radius: 4px; height: 8px; }
+
+.total-row td { background: #1c2128; font-weight: bold; border-top: 1px solid #30363d; }
+
+.badge {
+  display: inline-block;
+  background: #2ea04320;
+  color: #3fb950;
+  border: 1px solid #2ea04340;
+  border-radius: 20px;
+  padding: 2px 10px;
+  font-size: 11px;
+  margin-left: 8px;
+}
+.footer {
+  text-align: center;
+  color: #484f58;
+  font-size: 11px;
+  padding: 20px;
+}
+</style>
+</head>
+<body>
+
+<!-- 头部 -->
+<div class="header">
+  <div>
+    <h1>🌿 黑河中支 · 常青藤看板</h1>
+    <p>太平人寿黑龙江黑河中支 · 运营团队</p>
+  </div>
+  <div class="update-time">
+    🕘 更新时间<br>2026-04-21 08:37
+  </div>
+</div>
+
+<!-- KPI 汇总 -->
+<div class="kpi-grid">
+  <div class="kpi">
+    <div class="kpi-label">🌿 4月入围人数</div>
+    <div class="kpi-value">5</div>
+    <div class="kpi-sub">达成常青藤荣誉</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-label">📋 3月入围人数</div>
+    <div class="kpi-value" style="color:#58a6ff">21</div>
+    <div class="kpi-sub">上月达成人数</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-label">🔄 连续入围人数</div>
+    <div class="kpi-value" style="color:#f0883e">1</div>
+    <div class="kpi-sub">3月+4月均入围</div>
+  </div>
+  <div class="kpi">
+    <div class="kpi-label">📈 整体平移率</div>
+    <div class="kpi-value" style="color:#f85149">4.8%</div>
+    <div class="kpi-sub">3月→4月留存率</div>
+  </div>
+</div>
+
+<!-- 模块1 + 模块2 并排 -->
+<div class="grid2">
+
+  <!-- 模块1：各营服4月入围人数 -->
+  <div class="section">
+    <div class="section-title">
+      <span>🌿</span> 各营服 · 4月入围人数
+      <span class="badge">共 5 人</span>
+    </div>
+    <table>
+      <tr>
+        <th>营服名称</th>
+        <th style="text-align:right">入围人数</th>
+        <th>占比</th>
+        <th style="text-align:right">%</th>
+      </tr>
+      
+    <tr>
+      <td class="dept-name">通北</td>
+      <td class="num">2</td>
+      <td>
+        <div class="bar-bg">
+          <div class="bar-fill" style="width:80px"></div>
+        </div>
+      </td>
+      <td class="pct">40.0%</td>
+    </tr>
+    <tr>
+      <td class="dept-name">嫩江</td>
+      <td class="num">1</td>
+      <td>
+        <div class="bar-bg">
+          <div class="bar-fill" style="width:40px"></div>
+        </div>
+      </td>
+      <td class="pct">20.0%</td>
+    </tr>
+    <tr>
+      <td class="dept-name">孙吴</td>
+      <td class="num">1</td>
+      <td>
+        <div class="bar-bg">
+          <div class="bar-fill" style="width:40px"></div>
+        </div>
+      </td>
+      <td class="pct">20.0%</td>
+    </tr>
+    <tr>
+      <td class="dept-name">五大连池</td>
+      <td class="num">1</td>
+      <td>
+        <div class="bar-bg">
+          <div class="bar-fill" style="width:40px"></div>
+        </div>
+      </td>
+      <td class="pct">20.0%</td>
+    </tr>
+      <tr class="total-row">
+        <td class="dept-name">合计</td>
+        <td class="num">5</td>
+        <td></td>
+        <td class="pct">100%</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- 模块2：平移率 -->
+  <div class="section">
+    <div class="section-title">
+      <span>📈</span> 各营服 · 常青藤平移率
+      <span class="badge">3月→4月</span>
+    </div>
+    <table>
+      <tr>
+        <th>营服名称</th>
+        <th style="text-align:right">3月入围</th>
+        <th style="text-align:right">连续入围</th>
+        <th style="text-align:right">平移率</th>
+      </tr>
+      
+    <tr>
+      <td class="dept-name">五大连池</td>
+      <td class="num">2</td>
+      <td class="num">0</td>
+      <td class="num" style="color:#f85149;font-weight:bold">0.0%</td>
+    </tr>
+    <tr>
+      <td class="dept-name">农垦九三管理局</td>
+      <td class="num">1</td>
+      <td class="num">0</td>
+      <td class="num" style="color:#f85149;font-weight:bold">0.0%</td>
+    </tr>
+    <tr>
+      <td class="dept-name">北安</td>
+      <td class="num">5</td>
+      <td class="num">0</td>
+      <td class="num" style="color:#f85149;font-weight:bold">0.0%</td>
+    </tr>
+    <tr>
+      <td class="dept-name">嫩江</td>
+      <td class="num">0</td>
+      <td class="num">0</td>
+      <td class="num" style="color:#f85149;font-weight:bold">0.0%</td>
+    </tr>
+    <tr>
+      <td class="dept-name">孙吴</td>
+      <td class="num">0</td>
+      <td class="num">0</td>
+      <td class="num" style="color:#f85149;font-weight:bold">0.0%</td>
+    </tr>
+    <tr>
+      <td class="dept-name">逊克</td>
+      <td class="num">1</td>
+      <td class="num">0</td>
+      <td class="num" style="color:#f85149;font-weight:bold">0.0%</td>
+    </tr>
+    <tr>
+      <td class="dept-name">通北</td>
+      <td class="num">2</td>
+      <td class="num">1</td>
+      <td class="num" style="color:#f0883e;font-weight:bold">50.0%</td>
+    </tr>
+    <tr>
+      <td class="dept-name">黑河</td>
+      <td class="num">7</td>
+      <td class="num">0</td>
+      <td class="num" style="color:#f85149;font-weight:bold">0.0%</td>
+    </tr>
+    <tr>
+      <td class="dept-name">黑河合作区</td>
+      <td class="num">3</td>
+      <td class="num">0</td>
+      <td class="num" style="color:#f85149;font-weight:bold">0.0%</td>
+    </tr>
+      <tr class="total-row">
+        <td class="dept-name">合计</td>
+        <td class="num">21</td>
+        <td class="num">1</td>
+        <td class="num" style="color:#f85149">4.8%</td>
+      </tr>
+    </table>
+  </div>
+
+</div>
+
+<!-- 模块3：3月入围但4月未入围明细 -->
+<div class="section">
+  <div class="section-title">
+    <span>⚠️</span> 流失预警 · 3月入围但4月未入围
+    <span class="badge" style="background:#f8514920;color:#f85149;border-color:#f8514940">共 20 人</span>
+  </div>
+  <table>
+    <tr>
+      <th>营服名称</th>
+      <th>姓名</th>
+      <th>业务员代码</th>
+    </tr>
+    <tr><td class='dept-name'>五大连池</td><td>黑龙江</td><td style='color:#8b949e;font-size:11px'>06422539552</td></tr><tr><td class='dept-name'>五大连池</td><td>黑龙江</td><td style='color:#8b949e;font-size:11px'>05218652612</td></tr><tr><td class='dept-name'>农垦九三管理局</td><td>黑龙江</td><td style='color:#8b949e;font-size:11px'>06148031352</td></tr><tr><td class='dept-name'>北安</td><td>黑龙江</td><td style='color:#8b949e;font-size:11px'>06030557082</td></tr><tr><td class='dept-name'>北安</td><td>黑龙江</td><td style='color:#8b949e;font-size:11px'>07033031242</td></tr><tr><td class='dept-name'>北安</td><td>黑龙江</td><td style='color:#8b949e;font-size:11px'>05977995822</td></tr><tr><td class='dept-name'>北安</td><td>黑龙江</td><td style='color:#8b949e;font-size:11px'>00518882952</td></tr><tr><td class='dept-name'>北安</td><td>黑龙江</td><td style='color:#8b949e;font-size:11px'>00482949272</td></tr><tr><td class='dept-name'>逊克</td><td>黑龙江</td><td style='color:#8b949e;font-size:11px'>05118376352</td></tr><tr><td class='dept-name'>通北</td><td>黑龙江</td><td style='color:#8b949e;font-size:11px'>06937667572</td></tr><tr><td class='dept-name'>黑河</td><td>黑龙江</td><td style='color:#8b949e;font-size:11px'>05149820692</td></tr><tr><td class='dept-name'>黑河</td><td>黑龙江</td><td style='color:#8b949e;font-size:11px'>00631066872</td></tr><tr><td class='dept-name'>黑河</td><td>黑龙江</td><td style='color:#8b949e;font-size:11px'>00451148622</td></tr><tr><td class='dept-name'>黑河</td><td>黑龙江</td><td style='color:#8b949e;font-size:11px'>06242354332</td></tr><tr><td class='dept-name'>黑河</td><td>黑龙江</td><td style='color:#8b949e;font-size:11px'>00530575572</td></tr><tr><td class='dept-name'>黑河</td><td>黑龙江</td><td style='color:#8b949e;font-size:11px'>00732857142</td></tr><tr><td class='dept-name'>黑河</td><td>黑龙江</td><td style='color:#8b949e;font-size:11px'>00451149322</td></tr><tr><td class='dept-name'>黑河合作区</td><td>黑龙江</td><td style='color:#8b949e;font-size:11px'>00498471642</td></tr><tr><td class='dept-name'>黑河合作区</td><td>黑龙江</td><td style='color:#8b949e;font-size:11px'>00524088852</td></tr><tr><td class='dept-name'>黑河合作区</td><td>黑龙江</td><td style='color:#8b949e;font-size:11px'>00788219852</td></tr>
+  </table>
+</div>
+
+<div class="footer">
+  太平人寿黑龙江黑河中支 · 常青藤看板 · 数据更新于 2026-04-21 08:37
+</div>
+
+</body>
+</html>
