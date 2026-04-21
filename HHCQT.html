@@ -95,6 +95,21 @@ tr:hover td { background: #1c2128; }
 .total-row td { background: #1c2128; font-weight: bold; border-top: 1px solid #30363d; }
 .badge { display: inline-block; background: #2ea04320; color: #3fb950; border: 1px solid #2ea04340; border-radius: 20px; padding: 2px 10px; font-size: 11px; margin-left: 4px; }
 .footer { text-align: center; color: #484f58; font-size: 11px; padding: 20px; }
+
+/* ---- 柱状图 ---- */
+.chart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 20px; }
+@media(max-width: 700px) { .chart-grid { grid-template-columns: 1fr; } }
+.chart-card { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 18px 20px; }
+.chart-card-title { color: #8b949e; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 14px; display: flex; align-items: center; gap: 6px; border-bottom: 1px solid #21262d; padding-bottom: 10px; }
+.chart-card-title span { font-size: 14px; }
+.bar-row { display: flex; align-items: center; margin-bottom: 8px; gap: 10px; }
+.bar-label { color: #e6edf3; font-size: 12px; min-width: 70px; text-align: right; white-space: nowrap; }
+.bar-track { flex: 1; height: 18px; background: #21262d; border-radius: 9px; overflow: hidden; position: relative; }
+.bar-fill { height: 100%; border-radius: 9px; transition: width 0.6s ease; min-width: 2px; }
+.bar-val { font-size: 12px; font-weight: bold; min-width: 42px; text-align: right; }
+.bar-legend { display: flex; gap: 14px; margin-top: 14px; flex-wrap: wrap; }
+.legend-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: #8b949e; }
+.legend-dot { width: 8px; height: 8px; border-radius: 50%; }
 </style>
 </head>
 <body>
@@ -211,6 +226,156 @@ tr:hover td { background: #1c2128; }
   </table>
 </div>
 
+<!-- 柱状图模块：达成率 + 平移率 -->
+<div class="chart-grid">
+  <div class="chart-card">
+    <div class="chart-card-title">
+      <span>📊</span> 各营服达成率排行
+    </div>
+    <div class="bar-row">
+  <div class="bar-label">通北</div>
+  <div class="bar-track">
+    <div class="bar-fill" style="width:100%;background:#f85149;"></div>
+  </div>
+  <div class="bar-val" style="color:#f85149;">40%</div>
+</div>
+<div class="bar-row">
+  <div class="bar-label">孙吴</div>
+  <div class="bar-track">
+    <div class="bar-fill" style="width:62%;background:#f85149;"></div>
+  </div>
+  <div class="bar-val" style="color:#f85149;">25%</div>
+</div>
+<div class="bar-row">
+  <div class="bar-label">嫩江</div>
+  <div class="bar-track">
+    <div class="bar-fill" style="width:50%;background:#f85149;"></div>
+  </div>
+  <div class="bar-val" style="color:#f85149;">20%</div>
+</div>
+<div class="bar-row">
+  <div class="bar-label">五大连池</div>
+  <div class="bar-track">
+    <div class="bar-fill" style="width:30%;background:#f85149;"></div>
+  </div>
+  <div class="bar-val" style="color:#f85149;">12%</div>
+</div>
+<div class="bar-row">
+  <div class="bar-label">逊克</div>
+  <div class="bar-track">
+    <div class="bar-fill" style="width:0%;background:#f85149;"></div>
+  </div>
+  <div class="bar-val" style="color:#f85149;">0%</div>
+</div>
+<div class="bar-row">
+  <div class="bar-label">黑河合作区</div>
+  <div class="bar-track">
+    <div class="bar-fill" style="width:0%;background:#f85149;"></div>
+  </div>
+  <div class="bar-val" style="color:#f85149;">0%</div>
+</div>
+<div class="bar-row">
+  <div class="bar-label">农垦九三管理局</div>
+  <div class="bar-track">
+    <div class="bar-fill" style="width:0%;background:#f85149;"></div>
+  </div>
+  <div class="bar-val" style="color:#f85149;">0%</div>
+</div>
+<div class="bar-row">
+  <div class="bar-label">北安</div>
+  <div class="bar-track">
+    <div class="bar-fill" style="width:0%;background:#f85149;"></div>
+  </div>
+  <div class="bar-val" style="color:#f85149;">0%</div>
+</div>
+<div class="bar-row">
+  <div class="bar-label">黑河</div>
+  <div class="bar-track">
+    <div class="bar-fill" style="width:0%;background:#f85149;"></div>
+  </div>
+  <div class="bar-val" style="color:#f85149;">0%</div>
+</div>
+    <div class="bar-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#3fb950"></div>≥100% 达标</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#f0883e"></div>50-99% 进行中</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#f85149"></div>&lt;50% 预警</div>
+    </div>
+  </div>
+  <div class="chart-card">
+    <div class="chart-card-title">
+      <span>📈</span> 各营服平移率排行
+    </div>
+    <div class="bar-row">
+  <div class="bar-label">通北</div>
+  <div class="bar-track">
+    <div class="bar-fill" style="width:100%;background:#f0883e;"></div>
+  </div>
+  <div class="bar-val" style="color:#f0883e;">50%</div>
+</div>
+<div class="bar-row">
+  <div class="bar-label">黑河</div>
+  <div class="bar-track">
+    <div class="bar-fill" style="width:0%;background:#f85149;"></div>
+  </div>
+  <div class="bar-val" style="color:#f85149;">0%</div>
+</div>
+<div class="bar-row">
+  <div class="bar-label">北安</div>
+  <div class="bar-track">
+    <div class="bar-fill" style="width:0%;background:#f85149;"></div>
+  </div>
+  <div class="bar-val" style="color:#f85149;">0%</div>
+</div>
+<div class="bar-row">
+  <div class="bar-label">黑河合作区</div>
+  <div class="bar-track">
+    <div class="bar-fill" style="width:0%;background:#f85149;"></div>
+  </div>
+  <div class="bar-val" style="color:#f85149;">0%</div>
+</div>
+<div class="bar-row">
+  <div class="bar-label">五大连池</div>
+  <div class="bar-track">
+    <div class="bar-fill" style="width:0%;background:#f85149;"></div>
+  </div>
+  <div class="bar-val" style="color:#f85149;">0%</div>
+</div>
+<div class="bar-row">
+  <div class="bar-label">农垦九三管理局</div>
+  <div class="bar-track">
+    <div class="bar-fill" style="width:0%;background:#f85149;"></div>
+  </div>
+  <div class="bar-val" style="color:#f85149;">0%</div>
+</div>
+<div class="bar-row">
+  <div class="bar-label">逊克</div>
+  <div class="bar-track">
+    <div class="bar-fill" style="width:0%;background:#f85149;"></div>
+  </div>
+  <div class="bar-val" style="color:#f85149;">0%</div>
+</div>
+<div class="bar-row">
+  <div class="bar-label">嫩江</div>
+  <div class="bar-track">
+    <div class="bar-fill" style="width:0%;background:#f85149;"></div>
+  </div>
+  <div class="bar-val" style="color:#f85149;">0%</div>
+</div>
+<div class="bar-row">
+  <div class="bar-label">孙吴</div>
+  <div class="bar-track">
+    <div class="bar-fill" style="width:0%;background:#f85149;"></div>
+  </div>
+  <div class="bar-val" style="color:#f85149;">0%</div>
+</div>
+    <div class="bar-legend">
+      <div class="legend-item"><div class="legend-dot" style="background:#3fb950"></div>≥60% 优秀</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#f0883e"></div>30-59% 一般</div>
+      <div class="legend-item"><div class="legend-dot" style="background:#f85149"></div>&lt;30% 预警</div>
+    </div>
+  </div>
+</div>
+
 <!-- 模块4：流失预警（横向滚动） -->
 <div class="section">
   <div class="section-title">
@@ -227,7 +392,7 @@ tr:hover td { background: #1c2128; }
         <th style="text-align:right">承保长险件数</th>
         <th style="text-align:right">承保3000P件数</th>
       </tr>
-      <tr><td class='dept-name'>五大连池</td><td>王利</td><td>正式业务员</td><td class='num'>0.00</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>五大连池</td><td>杜艳玲</td><td>业务经理一级</td><td class='num'>2,835.12</td><td class='num'>2</td><td class='num'>1</td></tr><tr><td class='dept-name'>农垦九三管理局</td><td>董艳丽</td><td>业务主任</td><td class='num'>1,158.50</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>北安</td><td>卞晓敏</td><td>区域总监</td><td class='num'>3,125.74</td><td class='num'>1</td><td class='num'>0</td></tr><tr><td class='dept-name'>北安</td><td>孙孟胜</td><td>业务经理一级</td><td class='num'>1,686.96</td><td class='num'>2</td><td class='num'>1</td></tr><tr><td class='dept-name'>北安</td><td>徐秀兰</td><td>正式业务员</td><td class='num'>0.00</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>北安</td><td>梁枫</td><td>业务经理一级</td><td class='num'>393.70</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>北安</td><td>刘立</td><td>业务经理一级</td><td class='num'>965.10</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>逊克</td><td>孙敏</td><td>业务经理二级</td><td class='num'>3,611.00</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>通北</td><td>吕艳杰</td><td>业务经理一级</td><td class='num'>2,964.08</td><td class='num'>6</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河</td><td>林存丽</td><td>正式业务员</td><td class='num'>0.00</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河</td><td>崔国丽</td><td>业务经理二级</td><td class='num'>1,846.88</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河</td><td>徐林林</td><td>业务经理二级</td><td class='num'>2,737.56</td><td class='num'>2</td><td class='num'>1</td></tr><tr><td class='dept-name'>黑河</td><td>王翠玲</td><td>正式业务员</td><td class='num'>903.60</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河</td><td>张静</td><td>正式业务员</td><td class='num'>1,965.80</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河</td><td>王静霞</td><td>业务经理一级</td><td class='num'>1,860.84</td><td class='num'>1</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河</td><td>徐东梅</td><td>业务经理一级</td><td class='num'>48,156.60</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河合作区</td><td>贺伟</td><td>高级经理一级</td><td class='num'>895.11</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河合作区</td><td>于海霞</td><td>业务经理一级</td><td class='num'>89.80</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河合作区</td><td>刘淑芝</td><td>高级经理一级</td><td class='num'>1,815.00</td><td class='num'>1</td><td class='num'>0</td></tr>
+      <tr><td class='dept-name'>五大连池</td><td>杜艳玲</td><td>业务经理一级</td><td class='num'>2,835.12</td><td class='num'>2</td><td class='num'>1</td></tr><tr><td class='dept-name'>五大连池</td><td>王利</td><td>正式业务员</td><td class='num'>0.00</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>农垦九三管理局</td><td>董艳丽</td><td>业务主任</td><td class='num'>1,158.50</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>北安</td><td>卞晓敏</td><td>区域总监</td><td class='num'>3,125.74</td><td class='num'>1</td><td class='num'>0</td></tr><tr><td class='dept-name'>北安</td><td>徐秀兰</td><td>正式业务员</td><td class='num'>0.00</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>北安</td><td>梁枫</td><td>业务经理一级</td><td class='num'>393.70</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>北安</td><td>刘立</td><td>业务经理一级</td><td class='num'>965.10</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>北安</td><td>孙孟胜</td><td>业务经理一级</td><td class='num'>1,686.96</td><td class='num'>2</td><td class='num'>1</td></tr><tr><td class='dept-name'>逊克</td><td>孙敏</td><td>业务经理二级</td><td class='num'>3,611.00</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>通北</td><td>吕艳杰</td><td>业务经理一级</td><td class='num'>2,964.08</td><td class='num'>6</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河</td><td>张静</td><td>正式业务员</td><td class='num'>1,965.80</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河</td><td>徐东梅</td><td>业务经理一级</td><td class='num'>48,156.60</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河</td><td>林存丽</td><td>正式业务员</td><td class='num'>0.00</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河</td><td>王翠玲</td><td>正式业务员</td><td class='num'>903.60</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河</td><td>徐林林</td><td>业务经理二级</td><td class='num'>2,737.56</td><td class='num'>2</td><td class='num'>1</td></tr><tr><td class='dept-name'>黑河</td><td>崔国丽</td><td>业务经理二级</td><td class='num'>1,846.88</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河</td><td>王静霞</td><td>业务经理一级</td><td class='num'>1,860.84</td><td class='num'>1</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河合作区</td><td>于海霞</td><td>业务经理一级</td><td class='num'>89.80</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河合作区</td><td>刘淑芝</td><td>高级经理一级</td><td class='num'>1,815.00</td><td class='num'>1</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河合作区</td><td>贺伟</td><td>高级经理一级</td><td class='num'>895.11</td><td class='num'>0</td><td class='num'>0</td></tr>
     </table>
   </div>
 </div>
@@ -249,7 +414,7 @@ tr:hover td { background: #1c2128; }
 </div>
 
 <div class="footer">
-  🌿 黑河常青藤看板 · 数据更新于 2026-04-21 10:10
+  🌿 黑河常青藤看板 · 数据更新于 2026-04-21 10:16
 </div>
 
 </body>
