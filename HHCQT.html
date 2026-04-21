@@ -17,9 +17,9 @@ body { font-family: 'Microsoft YaHei', Arial, sans-serif; background: #0d1117; c
 .kpi-value { font-size: 36px; font-weight: bold; color: #3fb950; }
 .kpi-sub   { color: #8b949e; font-size: 11px; margin-top: 6px; }
 .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px; }
-@media(max-width: 800px) { .grid2 { grid-template-columns: 1fr; } }
+@media(max-width: 900px) { .grid2 { grid-template-columns: 1fr; } }
 .section { background: #161b22; border: 1px solid #30363d; border-radius: 12px; padding: 20px; margin-bottom: 20px; }
-.section-title { color: #8b949e; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid #21262d; display: flex; align-items: center; gap: 8px; }
+.section-title { color: #8b949e; font-size: 12px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid #21262d; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; gap: 6px; }
 .section-title span { color: #3fb950; font-size: 16px; }
 table { width: 100%; border-collapse: collapse; font-size: 13px; }
 th { color: #8b949e; text-align: left; padding: 8px 10px; border-bottom: 1px solid #30363d; font-size: 11px; font-weight: normal; letter-spacing: 0.5px; }
@@ -29,7 +29,7 @@ tr:hover td { background: #1c2128; }
 .dept-name { color: #e6edf3; font-weight: 500; }
 .num { text-align: right; color: #58a6ff; font-weight: bold; }
 .total-row td { background: #1c2128; font-weight: bold; border-top: 1px solid #30363d; }
-.badge { display: inline-block; background: #2ea04320; color: #3fb950; border: 1px solid #2ea04340; border-radius: 20px; padding: 2px 10px; font-size: 11px; margin-left: 8px; }
+.badge { display: inline-block; background: #2ea04320; color: #3fb950; border: 1px solid #2ea04340; border-radius: 20px; padding: 2px 10px; font-size: 11px; margin-left: 4px; }
 .footer { text-align: center; color: #484f58; font-size: 11px; padding: 20px; }
 </style>
 </head>
@@ -41,7 +41,7 @@ tr:hover td { background: #1c2128; }
     <h1>HHCQT · 常青藤看板</h1>
     <p>太平人寿黑龙江黑河中支 · 运营团队</p>
   </div>
-  <div class="update-time">🕘 更新时间<br>2026-04-21 09:38</div>
+  <div class="update-time">🕘 更新时间<br>2026-04-21 10:04</div>
 </div>
 
 <!-- KPI 汇总 -->
@@ -82,14 +82,14 @@ tr:hover td { background: #1c2128; }
         <th>营服名称</th>
         <th style="text-align:right">目标</th>
         <th style="text-align:right">入围人数</th>
-        <th style="text-align:right">入围率</th>
+        <th style="text-align:right">达成率</th>
       </tr>
       <tr><td class='dept-name'>通北</td><td class='num'>5</td><td class='num'>2</td><td class='num' style='color:#f85149;font-weight:bold'>40%</td></tr><tr><td class='dept-name'>孙吴</td><td class='num'>4</td><td class='num'>1</td><td class='num' style='color:#f85149;font-weight:bold'>25%</td></tr><tr><td class='dept-name'>嫩江</td><td class='num'>5</td><td class='num'>1</td><td class='num' style='color:#f85149;font-weight:bold'>20%</td></tr><tr><td class='dept-name'>五大连池</td><td class='num'>8</td><td class='num'>1</td><td class='num' style='color:#f85149;font-weight:bold'>12%</td></tr><tr><td class='dept-name'>逊克</td><td class='num'>2</td><td class='num'>0</td><td class='num' style='color:#f85149;font-weight:bold'>0%</td></tr><tr><td class='dept-name'>黑河合作区</td><td class='num'>4</td><td class='num'>0</td><td class='num' style='color:#f85149;font-weight:bold'>0%</td></tr><tr><td class='dept-name'>农垦九三管理局</td><td class='num'>6</td><td class='num'>0</td><td class='num' style='color:#f85149;font-weight:bold'>0%</td></tr><tr><td class='dept-name'>北安</td><td class='num'>7</td><td class='num'>0</td><td class='num' style='color:#f85149;font-weight:bold'>0%</td></tr><tr><td class='dept-name'>黑河</td><td class='num'>11</td><td class='num'>0</td><td class='num' style='color:#f85149;font-weight:bold'>0%</td></tr>
       <tr class="total-row">
         <td class="dept-name">合计</td>
         <td class="num">52</td>
         <td class="num">5</td>
-        <td class="num" style="color:#3fb950">10%</td>
+        <td class="num" style="color:#f85149;font-weight:bold">10%</td>
       </tr>
     </table>
   </div>
@@ -153,8 +153,11 @@ tr:hover td { background: #1c2128; }
       <th>营服名称</th>
       <th>姓名</th>
       <th>职级</th>
+      <th style="text-align:right">承保FYC</th>
+      <th style="text-align:right">承保长险件数</th>
+      <th style="text-align:right">承保3000P件数</th>
     </tr>
-    <tr><td class='dept-name'>五大连池</td><td>杜艳玲</td><td>业务经理一级</td></tr><tr><td class='dept-name'>五大连池</td><td>王利</td><td>正式业务员</td></tr><tr><td class='dept-name'>农垦九三管理局</td><td>董艳丽</td><td>业务主任</td></tr><tr><td class='dept-name'>北安</td><td>刘立</td><td>业务经理一级</td></tr><tr><td class='dept-name'>北安</td><td>徐秀兰</td><td>正式业务员</td></tr><tr><td class='dept-name'>北安</td><td>孙孟胜</td><td>业务经理一级</td></tr><tr><td class='dept-name'>北安</td><td>梁枫</td><td>业务经理一级</td></tr><tr><td class='dept-name'>北安</td><td>卞晓敏</td><td>区域总监</td></tr><tr><td class='dept-name'>逊克</td><td>孙敏</td><td>业务经理二级</td></tr><tr><td class='dept-name'>通北</td><td>吕艳杰</td><td>业务经理一级</td></tr><tr><td class='dept-name'>黑河</td><td>张静</td><td>正式业务员</td></tr><tr><td class='dept-name'>黑河</td><td>崔国丽</td><td>业务经理二级</td></tr><tr><td class='dept-name'>黑河</td><td>王静霞</td><td>业务经理一级</td></tr><tr><td class='dept-name'>黑河</td><td>王翠玲</td><td>正式业务员</td></tr><tr><td class='dept-name'>黑河</td><td>徐林林</td><td>业务经理二级</td></tr><tr><td class='dept-name'>黑河</td><td>徐东梅</td><td>业务经理一级</td></tr><tr><td class='dept-name'>黑河</td><td>林存丽</td><td>正式业务员</td></tr><tr><td class='dept-name'>黑河合作区</td><td>贺伟</td><td>高级经理一级</td></tr><tr><td class='dept-name'>黑河合作区</td><td>刘淑芝</td><td>高级经理一级</td></tr><tr><td class='dept-name'>黑河合作区</td><td>于海霞</td><td>业务经理一级</td></tr>
+    <tr><td class='dept-name'>五大连池</td><td>王利</td><td>正式业务员</td><td class='num'>0.00</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>五大连池</td><td>杜艳玲</td><td>业务经理一级</td><td class='num'>2,835.12</td><td class='num'>2</td><td class='num'>1</td></tr><tr><td class='dept-name'>农垦九三管理局</td><td>董艳丽</td><td>业务主任</td><td class='num'>1,158.50</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>北安</td><td>梁枫</td><td>业务经理一级</td><td class='num'>393.70</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>北安</td><td>卞晓敏</td><td>区域总监</td><td class='num'>3,125.74</td><td class='num'>1</td><td class='num'>0</td></tr><tr><td class='dept-name'>北安</td><td>徐秀兰</td><td>正式业务员</td><td class='num'>0.00</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>北安</td><td>刘立</td><td>业务经理一级</td><td class='num'>965.10</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>北安</td><td>孙孟胜</td><td>业务经理一级</td><td class='num'>1,686.96</td><td class='num'>2</td><td class='num'>1</td></tr><tr><td class='dept-name'>逊克</td><td>孙敏</td><td>业务经理二级</td><td class='num'>3,611.00</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>通北</td><td>吕艳杰</td><td>业务经理一级</td><td class='num'>2,964.08</td><td class='num'>6</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河</td><td>张静</td><td>正式业务员</td><td class='num'>1,965.80</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河</td><td>王静霞</td><td>业务经理一级</td><td class='num'>1,860.84</td><td class='num'>1</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河</td><td>崔国丽</td><td>业务经理二级</td><td class='num'>1,846.88</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河</td><td>徐林林</td><td>业务经理二级</td><td class='num'>2,737.56</td><td class='num'>2</td><td class='num'>1</td></tr><tr><td class='dept-name'>黑河</td><td>徐东梅</td><td>业务经理一级</td><td class='num'>48,156.60</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河</td><td>林存丽</td><td>正式业务员</td><td class='num'>0.00</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河</td><td>王翠玲</td><td>正式业务员</td><td class='num'>903.60</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河合作区</td><td>刘淑芝</td><td>高级经理一级</td><td class='num'>1,815.00</td><td class='num'>1</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河合作区</td><td>贺伟</td><td>高级经理一级</td><td class='num'>895.11</td><td class='num'>0</td><td class='num'>0</td></tr><tr><td class='dept-name'>黑河合作区</td><td>于海霞</td><td>业务经理一级</td><td class='num'>89.80</td><td class='num'>0</td><td class='num'>0</td></tr>
   </table>
 </div>
 
@@ -175,7 +178,7 @@ tr:hover td { background: #1c2128; }
 </div>
 
 <div class="footer">
-  HHCQT 常青藤看板 · 数据更新于 2026-04-21 09:38
+  HHCQT 常青藤看板 · 数据更新于 2026-04-21 10:04
 </div>
 
 </body>
